@@ -1,54 +1,3 @@
-// // 0
-// import java.util.HashMap;
-
-// public class Main {
-
-//     public static void main(String[] args) {
-//         HashMap <Integer, String> emp = new HashMap<Integer, String>();
-//         emp.put(123456, "Иванов");
-//         emp.put(321456, "Васильев");
-//         emp.put(234561, "Петрова");
-//         emp.put(234432, "Иванов");
-//         emp.put(654321, "Петрова");
-//         emp.put(345678, "Иванов");
-//         for (Integer key : emp.keySet()) {
-//             if (emp.get(key).equals("Иванов"))
-//             {
-//                 System.out.printf("%d: %s\n", key, emp.get(key));
-//             }
-//         }
-//     }
-// }
-
-// import java.util.HashMap;
-// import java.util.stream.Collectors;
-
-// public class Main {
-//     public static boolean isIsomorfStr(String first, String second) {
-//         HashMap<Character, Character> stringMap = new HashMap<>();
-//         char[] firstChars = first.toCharArray();
-//         char[] secondChars = second.toCharArray();
-//         if (firstChars.length != secondChars.length) {
-//             return false;
-//         }
-//         for (int i = 0; i < first.length(); i++) {
-//             if (!stringMap.containsKey(firstChars[i])) {
-//                 if (stringMap.values().contains(secondChars[i])) {
-//                     return false;
-//                 }
-//                 stringMap.put(firstChars[i], secondChars[i]);
-//             } else if (!(stringMap.get(firstChars[i]) == secondChars[i])) {
-//                 return false;
-//             }
-//         }
-//         return true;
-//     }
-
-//     public static void main(String[] args) {
-//         System.out.printf(String.valueOf(isIsomorfStr("aia", "poor")));
-//     }
-// }
-
 // // 1 Реализуйте структуру телефонной книги с помощью HashMap, учитывая, что 1 человек может иметь несколько телефонов.
 // import java.util.HashMap;
 // import java.util.HashSet;
@@ -78,87 +27,87 @@
 //     }
 // }
 
-// Пусть дан список сотрудников: Иван Иванов
-// Светлана Петрова
-// Кристина Белова
-// Анна Мусина
-// Анна Крутова
-// Иван Юрин
-// Петр Лыков
-// Павел Чернов
-// Петр Чернышов
-// Мария Федорова
-// Марина Светлова
-// Мария Савина
-// Мария Рыкова
-// Марина Лугова
-// Анна Владимирова
-// Иван Мечников
-// Петр Петин
-// Иван Ежов
-// Написать программу, которая найдет и выведет повторяющиеся имена с количеством повторений. Отсортировать по убыванию популярности.
+// // 2. Пусть дан список сотрудников: Иван Иванов
+// // Светлана Петрова
+// // Кристина Белова
+// // Анна Мусина
+// // Анна Крутова
+// // Иван Юрин
+// // Петр Лыков
+// // Павел Чернов
+// // Петр Чернышов
+// // Мария Федорова
+// // Марина Светлова
+// // Мария Савина
+// // Мария Рыкова
+// // Марина Лугова
+// // Анна Владимирова
+// // Иван Мечников
+// // Петр Петин
+// // Иван Ежов
+// // Написать программу, которая найдет и выведет повторяющиеся имена с количеством повторений. Отсортировать по убыванию популярности.
 
+// import java.util.*;
 
-import java.util.Scanner;
-public class Hw5 {
-    String firstName;
-    String lastName;
+// public class Hw5 {
+//     public void Sort(){
 
-    public Hw5(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
-    public static void input(Hw5[] persons)
-    {
-        int i = 0;
-        String choice = "yes";
-        Scanner scanner = new Scanner(System.in);
-        do{
-            
-            System.out.printf("Вы хотите ввести ФИ нового сотрудника? (yes/no)? ");
-            Boolean flag = scanner.hasNextLine(); // проверка на корректный ввод
-            if (flag == true){
-                choice = scanner.nextLine();
-                flag = false;
-                if (choice.equals("yes")){
-                    System.out.printf("Введите имя %d сотрудника: ", i + 1);
-                    flag = scanner.hasNextLine();
-                    if (flag == true){
-                        flag = false;
-                        String firstName = scanner.nextLine();
-                        System.out.printf("Введите фамилию %d сотрудника: ", i + 1);
-                        flag = scanner.hasNextLine();
-                        if (flag == true){
-                            String lastName = scanner.nextLine();
-                            persons[i] = new Hw5(firstName, lastName);
-                            System.out.printf(persons[i].firstName);
-                            System.out.printf(" ");
-                            System.out.printf(persons[i].lastName);
-                            System.out.printf("\n");
-                            i++;
-                        }
-                    }
-                }
-                else if (!choice.equals("no")){
-                    System.out.printf("Некорректный ввод!\n");
-                }
-            }
-            
-        } while(!choice.equals("no") && i != persons.length);
-        if (i == persons.length)
-        {
-            System.out.printf("К сожалению, программа может работать только со списком из 20 человек.\n");
-        }
-        scanner.close();
-    }
+//         ArrayList <String> list = new ArrayList<>();
+//         Map <String, Integer> map = new HashMap<>();
+//         list.add("Иван Иванов");
+//         list.add("Светлана Петрова");
+//         list.add("Кристина Белова");
+//         list.add("Анна Мусина");
+//         list.add("Анна Крутова");
+//         list.add("Иван Юрин");
+//         list.add("Петр Лыков");
+//         list.add("Павел Чернов");
+//         list.add("Петр Чернышов");
+//         list.add("Мария Федорова");
+//         list.add("Марина Светлова");
+//         list.add("Мария Савина");
+//         list.add("Мария Рыкова");
+//         list.add("Марина Лугова");
+//         list.add("Анна Владимирова");
+//         list.add("Иван Мечников");
+//         list.add("Петр Петин");
+//         list.add("Иван Ежов");
+
+//         for (String item:list
+//              ) {
+//             String [] nameList = item.split(" ");
+//             var name = nameList[0].toString();
+//             if (map.containsKey(name)){
+//                 map.put(name, map.get(name) + 1);
+//             }
+//             else {
+//                 map.put(name, 1);
+//             }
+//         }
+
+        
+//         System.out.printf(map.toString());
+//         System.out.printf("\n");
+
+//         Map<String, Integer> unSortedMap =map;
+//         LinkedHashMap<String, Integer> reverseSortedMap = new LinkedHashMap<>();
+//         unSortedMap.entrySet()
+//                 .stream()
+//                 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+//                 .forEachOrdered(x -> reverseSortedMap.put(x.getKey(), x.getValue()));
+
+//                 System.out.printf(reverseSortedMap.toString());
+//                 System.out.printf("\n");
+
+//     }
+//     public static void main(final String[] args) {
+
+//         Hw5 persons = new Hw5();
+//         persons.Sort();
+//     }
+
     
-    public static void main(String[] args) {
-        Hw5 []persons = new Hw5[20];
-        input(persons);
-        //count(persons);
-
-    }
-}
+// }
 
 // import java.util.Random;
 
